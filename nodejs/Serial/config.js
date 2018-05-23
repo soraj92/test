@@ -6,7 +6,7 @@ module.exports = {
     ],
 
     db_schema : [
-        {file:'./user_schema', collection: 'serial', schemaName: 'SerialSchema', model: 'SerialModel'}
+        {file:'./serial_schema', collection: 'serial', schemaName: 'SerialSchema', modelName: 'SerialModel'}
     ]
-    , db_url : ''
+    , db_url : 'mongodb://localhost:27017/local'
 }

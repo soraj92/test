@@ -7,6 +7,7 @@ const app = express();
 const router = express.Router();
 const route_loader = require('./route/route_loader');
 const config = require('./config');
+const database = require('./database/database');
 
 
 app.set('port', process.env.PORT || config.server_port);
@@ -17,6 +18,6 @@ app.use(bodyparser.urlencoded({extended: false}));
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log('서버 실행');
-
+    database.init(app, config);
     route_loader.init(app, router);
 });
