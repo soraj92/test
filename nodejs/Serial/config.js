@@ -1,5 +1,5 @@
 module.exports = {
-    server_port : 8181,
+    server_port : 3000,
 
     route_info : [
         {file:'./user', path:'/serial/check', method:'check', type:'get'}
