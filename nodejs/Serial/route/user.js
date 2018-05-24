@@ -1,5 +1,7 @@
 const check = function(req, res) {
 
+    const logger = req.app.get('logger');
+
     const serial_IN = req.query.serial;
     const model_IN = req.query.model;
     const company_IN = req.query.company;
@@ -25,8 +27,6 @@ const check = function(req, res) {
                 const model_RS = result[0]._doc.model;
                 const company_RS = result[0]._doc.company;
 
-                console.log("IN : %s , %s , %s", serial_IN,company_IN,model_IN );
-                console.log("RS : %s , %s , %s", serial_RS,company_RS,model_RS );
 
                 if(company_RS.toLowerCase() == company_IN.toLowerCase() || company_RS == 'test') {
 
@@ -40,12 +40,13 @@ const check = function(req, res) {
                 error = 'S0';
             }
         
-        console.log(error);
+        logger.info("company : " + company_IN + "  /  model : " + model_IN + "  /  serial : " + serial_IN + "  /  결과 : " + check + "  /  error : " + error);
         res.writeHead('200', {'Content-Type': 'text/html;charset=utf-8'});
         res.write(check+"");
         res.end();
         });
     } else {
+        logger.error('DBERROR');
         res.writeHead('200', {'Content-Type': 'text/html;charset=utf-8'});
         res.write('DBCERROR');
         res.end(); 

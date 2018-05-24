@@ -10,8 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "date-utils": "^1.2.21",
     "express": "^4.16.3",
     "mongoose": "^5.1.1",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "winston": "^2.4.2",
+    "winston-daily-rotate-file": "^3.1.4"
   }
 }

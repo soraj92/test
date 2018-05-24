@@ -8,11 +8,13 @@ const router = express.Router();
 const route_loader = require('./route/route_loader');
 const config = require('./config');
 const database = require('./database/database');
+const logger = require('./common/logger');
 
 
 app.set('port', process.env.PORT || config.server_port);
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
+app.set('logger', logger);
 //app.use('/public', static(path.join(__dirname, 'public')));
 
 
