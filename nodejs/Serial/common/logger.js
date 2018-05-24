@@ -10,7 +10,7 @@ const logger = new (winston.Logger)({
             filename:'./log/infoLog/info_%DATE%.log',
             datePattern: 'YYYY-MM-DD',
             prepend:true,
-            maxsize:1000000,
+            maxsize:107374182400, //byte기준
             maxFiles:30,
             timestamp: function(){return new Date().toFormat('YYYY-MM-DD HH24:MI:SS')},
             json:false
