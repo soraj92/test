@@ -1,13 +1,15 @@
 const winston = require('winston');
 const utils = require('date-utils');
 const rotate = require('winston-daily-rotate-file');
+const path = require('path');
+const dir = path.join(__dirname,'..');
 
 const logger = new (winston.Logger)({
     transports : [
         new (rotate)({
             name:'infoLog',
             level:'info',
-            filename:'./log/infoLog/info_%DATE%.log',
+            filename: path.join(dir,'/log/infoLog/info_%DATE%.log'),
             datePattern: 'YYYY-MM-DD',
             prepend:true,
             maxsize:107374182400, //byte기준
