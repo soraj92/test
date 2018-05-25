@@ -20,7 +20,7 @@ const logger = new (winston.Logger)({
         new (rotate)({
             name: 'errorLog',
             level:'error',
-            filename: './log/errorLog/error_%DATE%.log',
+            filename: path.join(dir,'/log/infoLog/info_%DATE%.log'),
             datePattern: 'YYYY-MM-DD',
             maxsize:1000000,
             maxFiles:30,
