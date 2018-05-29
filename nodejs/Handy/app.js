@@ -8,12 +8,24 @@ const config = require('./config');
 
 app.set('port', process.env.PORT || config.server_port);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : false}));
+//app.use(bodyParser.urlencoded({extended : false}));
 
 router.route('/logistics/hlc').post(function(req,res) {
 
     console.log('들어옴');
-    console.dir(req);
+
+    let body = [];
+    req.on('data', function(chunk){
+        console.log('data?');
+        body.push(chunk);
+    }).on('end', function() {
+        console.log('end?');
+        body = Buffer.concat(body).toString();
+
+        console.log(body);
+    });
+
+    console.log('비동기');
 
     res.write('1');
     res.end();
