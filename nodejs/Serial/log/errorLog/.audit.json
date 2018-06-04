@@ -1,0 +1,19 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/ec2-user/test/nodejs/Serial/log/errorLog/.audit.json",
+    "files": [
+        {
+            "date": 1527228790291,
+            "name": "/home/ec2-user/test/nodejs/Serial/log/infoLog/info_2018-05-25.log",
+            "hash": "cbc149a509d5ddbee83e0d448ef6418b"
+        },
+        {
+            "date": 1527228790292,
+            "name": "/home/ec2-user/test/nodejs/Serial/log/errorLog/error_2018-05-25.log",
+            "hash": "59c30384ad954434e145c9f251fca607"
+        }
+    ]
+}
