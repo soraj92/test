@@ -11,7 +11,9 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "generic-pool": "^3.4.2",
     "mariasql": "^0.2.6",
+    "oracledb": "^2.3.0",
     "serve-static": "^1.13.2"
   }
 }
