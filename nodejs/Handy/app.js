@@ -9,6 +9,80 @@ const mariaSql = require('mariasql');
 const conn = new mariaSql();
 const route_loader = require('./route/route_loder');
 
+
+const genericPool = require('generic-pool');
+const oracledb = require('oracledb');
+
+var conf = {
+    "hostName" : "soraj92.crscibn3vj7r.ap-northeast-2.rds.amazonaws.com",
+    "port" : 1521,
+    "user" : "soraj92",
+    "password" : "s79e3po5",
+    "database" : "ORCL"
+};
+
+var pool = genericPool.Pool({
+        name:'testpool',
+        log:true,
+        max:20,
+        create:function(callback) {
+            var settings = {
+                hostname : conf.hostName,
+                port : conf.port,
+                database : conf.database,
+                user : conf.user,
+                password : conf.password
+            }
+            new oracledb.getConnection(settings, function(err, connection) {
+                callback(err,connection);
+            });
+        },
+        destroy: function(connection) {
+            connection.close();
+        }
+});
+
+var acquireAndQuery = function() {
+	pool.acquire(function(err, connection) {
+		if (err) {
+			console.log(err, "Error acquiring from pool.");
+			return;
+		}
+		connection.execute("BEGIN CODE20TEST(:P_JOB_SCT, :P_BSC_BRNSHP_CD, :P_PTN_BRNSHP_CD, :P_INV_NO, :P_SCAN_EMP, :P_CAR_CD, :P_SCAN_YMD, :P_SCAN_TME, :P_VIA_YN, :P_SERIAL_NO, :P_MGR_NO, :P_RET_CODE, :P_RET_MESG); END;"
+        ,{
+            P_JOB_SCT : '20'
+            , P_BSC_BRNSHP_CD : '88888'
+            , P_PTN_BRNSHP_CD : '88888'
+            , P_INV_NO : '1533283161'
+            , P_SCAN_EMP : '58888801'
+            , P_CAR_CD : '11111'
+            , P_SCAN_YMD : '20180528'
+            , P_SCAN_TME : '105609'
+            , P_VIA_YN : '0'
+            , P_SERIAL_NO : 'A11111'
+            , P_MGR_NO : ''
+            , P_RET_CODE : {dir : oracledb.BIND_OUT, type : oracledb.NUMBER}
+            , P_RET_MESG : {dir : oracledb.BIND_OUT, type : oracledb.STRING, maxsize:20}
+        }
+        , function(err, results) {
+			if (err) {
+				console.log(err, "Error executing query.");
+
+				// Simply releasing this connection back to the pool means a potentially
+				// corrupt connection may get reused.
+				pool.release(connection)
+
+				// This solves the issue
+				// pool.destroy(connection);
+
+				return;
+			}
+			pool.release(connection);
+			console.log(results);
+		});
+	});
+};
+
 function Connection() {
     conn.connect({
         host: "localhost",
