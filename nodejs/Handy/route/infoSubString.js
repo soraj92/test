@@ -4,7 +4,7 @@ info.init = function (body, callback) {
     body = Buffer.concat(body).toString();
     const info = body.split('\n');
 
-    let null_check = 0;
+    let null_check = [];
     let idx = []; // bsc + inv
     let code = [];
     let bsc = []; // 집하스캔
@@ -27,10 +27,10 @@ info.init = function (body, callback) {
 }
 
 function infosubString(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
+    
     for (var i = 0; i < info.length; i++) {
         if (!info[i]) {
-            console.log(i);
-            null_check = i;
+            null_check.push(i);
             break;
         }
 
