@@ -8,11 +8,12 @@ const logistics = function (req, res) {
         req.on('data', function(chunk) {
             body.push(chunk);
         }).on('end', function() {
-            body = Buffer.concat(body).toString();
+            const info = require('./infoSubString');
+            info.init(body);
             console.log('end')
             callback(null, body);
         });
-    }, function(err, result) {
+    }, function(err, body) {
         
         console.log('이벤트end보다 후');
         console.dir(body);
