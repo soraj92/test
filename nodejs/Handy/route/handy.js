@@ -10,8 +10,12 @@ const logistics = function (req, res) {
         }).on('end', function() {
             const info = require('./infoSubString');
             let info_sub;
-            info.init(body, function(result) {
-                info_sub = result;
+            info.init(body, function(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
+                if(null_check == 0)
+                    null_check = info.length;
+
+                for(var i = 0; i < null_check; i++)
+                    console.log(idx[i]);
             });
             console.log(info_sub);
             console.log('end')
