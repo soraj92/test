@@ -1,7 +1,7 @@
 let info = {};
 
 info.init = function(body) {
-    let body = Buffer.concat(body).toString();
+    body = Buffer.concat(body).toString();
     const info = body.split('\n');
 
     console.log('info.init');
