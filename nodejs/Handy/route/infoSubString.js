@@ -27,9 +27,9 @@ info.init = function (body, callback) {
 }
 
 function infosubString(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
-    null_check = null_check;
     for (var i = 0; i < info.length; i++) {
         if (!info[i]) {
+            console.log(i);
             null_check = i;
             break;
         }
