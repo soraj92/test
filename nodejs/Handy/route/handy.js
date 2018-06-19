@@ -8,6 +8,7 @@ const logistics = function (req, res) {
         req.on('data', function(chunk) {
             body.push(chunk);
         }).on('end', function() {
+            body = Buffer.concat(body).toString();
             console.log('end')
             callback(null, body);
         });
