@@ -12,8 +12,9 @@ const logistics = function (req, res) {
 
             info.init(body, function(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
             
+                console.log(null_check);
                 if(null_check[0]==0) {
-                    null_check = [];
+                    null_check.splice(0,null_check.length);
                     null_check.push(info.length);
                 }
 
