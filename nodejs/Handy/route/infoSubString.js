@@ -7,7 +7,7 @@ info.init = function(body, callback) {
     console.log('info.init');
     setTimeout(function(){}, 3000);
     console.log('info - settimeout');
-    callback('헛');
+    callback(info);
 }
 
 module.exports = info;
