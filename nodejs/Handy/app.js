@@ -8,6 +8,7 @@ const config = require('./config');
 const mariaSql = require('mariasql');
 const conn = new mariaSql();
 const route_loader = require('./route/route_loder');
+
 const oracledb = require('oracledb');
 
 oracledb.getConnection({
@@ -22,6 +23,33 @@ oracledb.getConnection({
 
     console.log('연결 성공');
 });
+
+
+function Connection() {
+    conn.connect({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: '12345',
+        database:"data",
+        db:"test"
+    });
+
+    conn.on('ready', function(){
+        console.log('연결');
+    });
+    conn.on('error', function(err){
+        console.log(err);
+    });
+
+    conn.on('end', function(){
+        console.log("end");
+    });
+
+    conn.on('close', function(){
+        console.log("close");
+    });
+}
 
 app.set('port', process.env.PORT || config.server_port);
 app.use(bodyParser.json());
