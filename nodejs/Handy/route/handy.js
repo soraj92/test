@@ -14,8 +14,7 @@ const logistics = function (req, res) {
             
                 console.log(null_check);
                 if(null_check[0]==0) {
-                    null_check.splice(0,null_check.length);
-                    null_check.push(info.length);
+                    null_check[0] = info.length;
                 }
 
                 for(var i = 0; i < null_check[0]; i++)

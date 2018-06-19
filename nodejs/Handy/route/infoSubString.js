@@ -29,8 +29,7 @@ function infosubString(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, 
     
     for (var i = 0; i < info.length; i++) {
         if (!info[i]) {
-            null_check.splice(0,null_check.length);
-            null_check.push(i);
+            null_check[0] = i;
             break;
         }
 
