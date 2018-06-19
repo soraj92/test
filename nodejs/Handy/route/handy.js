@@ -9,8 +9,11 @@ const logistics = function (req, res) {
             body.push(chunk);
         }).on('end', function() {
             const info = require('./infoSubString');
-            const i = info.init(body);
-            console.log(i);
+            let info_sub;
+            info.init(body, function(result) {
+                info_sub = result;
+            });
+            console.log(info_sub);
             console.log('end')
             callback(null, body);
         });
