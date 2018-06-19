@@ -4,7 +4,8 @@ info.init = function (body, callback) {
     body = Buffer.concat(body).toString();
     const info = body.split('\n');
 
-    let null_check = 0;
+    let null_check = [];
+    null_check.push(0);
     let idx = []; // bsc + inv
     let code = [];
     let bsc = []; // 집하스캔
