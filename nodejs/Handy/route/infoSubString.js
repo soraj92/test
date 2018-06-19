@@ -22,6 +22,7 @@ info.init = function (body, callback) {
     console.log('info.init');
     infosubString(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr);
     console.log('info - settimeout');
+    console.log(null_check);
     callback(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr);
 }
 
