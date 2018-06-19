@@ -4,7 +4,7 @@ const logistics = function (req, res) {
 
     let body = [];
     
-    async.waterfall([function() {
+    async.parallel([function() {
         req.on('data', function(chunk) {
             body.push(chunk);
         }).on('end', function() {
