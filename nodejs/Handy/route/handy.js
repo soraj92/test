@@ -4,15 +4,19 @@ const logistics = function (req, res) {
 
     let body = [];
     
-    async.parallel([function() {
+    async.waterfall([function(callback) {
         req.on('data', function(chunk) {
             body.push(chunk);
         }).on('end', function() {
-            console.log('end');
+            console.log('end')
+            callback(null, body);
         });
+    }, function(err, result) {
+        
+        console.log('이벤트end보다 후');
+        console.dir(body);
     }]);
 
-    console.log('이벤트end보다 후');
 }
 
 module.exports.logistics = logistics;
