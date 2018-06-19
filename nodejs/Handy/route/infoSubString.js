@@ -5,6 +5,7 @@ info.init = function (body, callback) {
     const info = body.split('\n');
 
     let null_check = [];
+    null_check.push(0);
     let idx = []; // bsc + inv
     let code = [];
     let bsc = []; // 집하스캔
