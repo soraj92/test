@@ -9,7 +9,7 @@ const logistics = function (req, res) {
             body.push(chunk);
         }).on('end', function() {
             const info = require('./infoSubString');
-            let info_sub;
+            
             info.init(body, function(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
                 if(null_check == 0)
                     null_check = info.length;
@@ -17,7 +17,6 @@ const logistics = function (req, res) {
                 for(var i = 0; i < null_check; i++)
                     console.log(idx[i]);
             });
-            console.log(info_sub);
             console.log('end')
             callback(null, body);
         });
