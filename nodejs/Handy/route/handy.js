@@ -72,11 +72,7 @@ const logistics = function (req, res) {
                             {
                                 type: oracledb.STRING,
                                 maxSize: 16
-                            },
-                            {
-                                type: oracledb.STRING,
-                                maxSize: 16
-                            },
+                            },,
                             {
                                 type: oracledb.STRING,
                                 maxSize: 16
