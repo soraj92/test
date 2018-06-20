@@ -32,7 +32,6 @@ const logistics = function (req, res) {
                     var sql = "BEGIN CODE20TEST(:P_JOB_SCT, :P_BSC_BRNSHP_CD, :P_PTN_BRNSHP_CD, :P_INV_NO, :P_SCAN_EMP, :P_CAR_CD, :P_SCAN_YMD, :P_SCAN_TME, :P_VIA_YN, :P_SERIAL_NO, :P_MGR_NO, :P_RET_CODE, :P_RET_MESG); END;"
                     var options = {
                         autoCommit: true, // autocommit if there are no batch errors
-                        batchErrors: true, // identify invalid records; start a transaction for valid ones
                         bindDefs: [ // describes the data in 'binds'
                             {
                                 type: oracledb.STRING,
