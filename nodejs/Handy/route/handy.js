@@ -34,57 +34,56 @@ const logistics = function (req, res) {
                         autoCommit: true, // autocommit if there are no batch errors
                         bindDefs: [ // describes the data in 'binds'
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             },
                             {
-                                dir: oracledb.BIND_IN,
                                 type: oracledb.STRING,
                                 maxSize: 16
-                            },,
+                            }, 
                             {
-                                dir: oracledb.BIND_IN,
+                                type: oracledb.STRING,
+                                maxSize: 16
+                            },
+                            {
+                                type: oracledb.NUMBER, dir: oracledb.BIND_OUT,
+                                type: oracledb.STRING,
+                                maxSize: 16
+                            },
+                            {
+                                type: oracledb.STRING, maxSize: 18, dir: oracledb.BIND_OUT,
                                 type: oracledb.STRING,
                                 maxSize: 16
                             } // size of the largest string, or as close as possible
