@@ -29,8 +29,7 @@ const logistics = function (req, res) {
                         console.error(err.message);
                         return;
                     }
-                    //var sql = "BEGIN CODE20TEST(:P_JOB_SCT, :P_BSC_BRNSHP_CD, :P_PTN_BRNSHP_CD, :P_INV_NO, :P_SCAN_EMP, :P_CAR_CD, :P_SCAN_YMD, :P_SCAN_TME, :P_VIA_YN, :P_SERIAL_NO, :P_MGR_NO, :P_RET_CODE, :P_RET_MESG); END;"
-                    var sql = "insert into code20 values(:JOB_SCT, :BSC_BRNSHP_CD, :PTN_BRNSHP_CD, :INV_NO, :SCAN_EMP, :CAR_CD, :SCAN_YMD, :SCAN_TME, :VIA_YN, :SERIAL_NO, :MGR_NO, :RET_CODE, :RET_MESG)"
+                    var sql = "BEGIN CODE20TEST(:P_JOB_SCT, :P_BSC_BRNSHP_CD, :P_PTN_BRNSHP_CD, :P_INV_NO, :P_SCAN_EMP, :P_CAR_CD, :P_SCAN_YMD, :P_SCAN_TME, :P_VIA_YN, :P_SERIAL_NO, :P_MGR_NO, :P_RET_CODE, :P_RET_MESG); END;"
                     var options = {
                         autoCommit: true, // autocommit if there are no batch errors
                         batchErrors: true, // identify invalid records; start a transaction for valid ones
@@ -82,10 +81,6 @@ const logistics = function (req, res) {
                             {
                                 type: oracledb.STRING,
                                 maxSize: 16
-                            },
-                            {
-                                type: oracledb.NUMBER,
-                                default:0
                             } // size of the largest string, or as close as possible
                         ]
                     };
