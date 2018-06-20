@@ -35,46 +35,58 @@ const logistics = function (req, res) {
                         batchErrors: true, // identify invalid records; start a transaction for valid ones
                         bindDefs: [ // describes the data in 'binds'
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             },
                             {
-                                type: oracledb.STRING
+                                type: oracledb.STRING,
+                                maxSize: 16
                             } // size of the largest string, or as close as possible
                         ]
                     };
                     console.log('연결 성공');
                     connection.executeMany(sql, binds, options, function (err, result) {
-                        if(err) {
+                        if (err) {
                             console.log(err);
                             return;
                         }
