@@ -82,6 +82,10 @@ const logistics = function (req, res) {
                             {
                                 type: oracledb.STRING,
                                 maxSize: 16
+                            },
+                            {
+                                type: oracledb.NUMBER,
+                                default:0
                             } // size of the largest string, or as close as possible
                         ]
                     };
