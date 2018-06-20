@@ -19,7 +19,7 @@ const logistics = function (req, res) {
 
                 // for (var i = 0; i < null_check[0]; i++)
                 //     console.log(idx[i]);
-
+                const oracledb = require('oracledb');
                 oracledb.getConnection({
                     user: "soraj92",
                     password: "s79e3po5",
