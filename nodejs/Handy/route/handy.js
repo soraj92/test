@@ -74,7 +74,11 @@ const logistics = function (req, res) {
                     };
                     console.log('연결 성공');
                     connection.executeMany(sql, binds, options, function (err, result) {
-                        console.log(result);
+                        if(err) {
+                            console.log(err);
+                            return;
+                        }
+                        console.dir(result);
                     });
                 });
             });
