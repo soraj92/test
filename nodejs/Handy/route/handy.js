@@ -3,30 +3,30 @@ const async = require('async');
 const logistics = function (req, res) {
 
     let body = [];
-    
-    async.waterfall([function(callback) {
-        req.on('data', function(chunk) {
+
+    async.waterfall([function (callback) {
+        req.on('data', function (chunk) {
             body.push(chunk);
-        }).on('end', function() {
+        }).on('end', function () {
             const info = require('./infoSubString');
 
-            info.init(body, function(info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr) {
-            
+            info.init(body, function (info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds) {
+
                 console.log(null_check);
-                if(null_check[0]==0) {
+                if (null_check[0] == 0) {
                     null_check[0] = info.length;
                 }
 
-                for(var i = 0; i < null_check[0]; i++)
+                for (var i = 0; i < null_check[0]; i++)
                     console.log(idx[i]);
+                    console.dir(binds);
             });
             console.log('end')
             callback(null, body);
         });
-    }, function(err, body) {
-        
+    }, function (err, body) {
+
         console.log('이벤트end보다 후');
-        console.dir(body);
     }]);
 
 }
