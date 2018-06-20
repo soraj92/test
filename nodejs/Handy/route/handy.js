@@ -96,11 +96,11 @@ const logistics = function (req, res) {
                             return;
                         }
                         console.dir(result);
+                        callback(null, body);
                     });
                 });
             });
-            console.log('end')
-            callback(null, body);
+            //console.log('end')
         });
     }, function (err, body) {
 
