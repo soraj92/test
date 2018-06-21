@@ -9,20 +9,21 @@ const logistics = function (req, res) {
             body.push(chunk);
         }).on('end', function () {
             const info = require('../SubString/totalSubString');
+                info.init(body, function (total_binds) {
+                    const oracledb = require('../Database/oracleDB');
 
-            info.init(body, function (total_binds) {
-                const oracledb = require('../Database/oracleDB');
+                    console.log(total_binds);
+                    oracledb.init(total_binds, function() {
+                        callback();
+                    });
 
-                console.log(total_binds);
-               // oracledb.init(total_binds);
-                
-            });
-            // console.log('result : ' + result);
-            // callback(null, result);
+                });
         });
     }, function (err, result) {
 
         console.log('이벤트end보다 후');
+        res.write("1");
+        res.end();
     }]);
 
 }

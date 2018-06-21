@@ -15,17 +15,23 @@ oracle.init = function (total_binds, callback) {
         }
 
         let start;
+        let check = 0;
         for (var i = 0; i < total_binds.length; i++) {
             if (i == 0)
                 start = require('./sub05');
             else if (i == 3)
                 start = require('./sub2021');
-                
+
             if (total_binds[i].length != 0) {
 
-                start.init(oracledb, connection, total_binds[i]);
+                start.init(oracledb, connection, total_binds[i], function() {
+                    check++;
+                    console.log(check);
+                });
             }
         }
+        if(check == 2)
+            callback();
     });
 
 };

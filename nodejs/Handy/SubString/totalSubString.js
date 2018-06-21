@@ -10,13 +10,13 @@ info.init = function (body, callback) {
         total_binds[i] = [];
 
     console.log('info.init');
-    totalsubString(info, total_binds);
-    setTimeout(function() {console.log('ㅎㅎ')}, 10000);
-    callback(total_binds);
+    totalsubString(info, total_binds, function() {        
+        callback(total_binds);
+    });
 }
 
-function totalsubString(info, total_binds) {
-
+function totalsubString(info, total_binds, callback) {
+    
     for (var i = 0; i < info.length; i++) {
         let sub;
 
@@ -79,7 +79,7 @@ function totalsubString(info, total_binds) {
 
     }
 
-
+    callback();
 }
 
 module.exports = info;
