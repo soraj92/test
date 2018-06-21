@@ -4,7 +4,7 @@ info.init = function (body, callback) {
     body = Buffer.concat(body).toString();
     const info = body.split('\n');
 
-    let total_binds = [];
+    let total_binds = new Array(9);
 
     console.log('info.init');
     totalsubString(info, total_binds);
