@@ -4,7 +4,10 @@ info.init = function (body, callback) {
     body = Buffer.concat(body).toString();
     const info = body.split('\n');
 
-    let total_binds = [];
+    let total_binds = new Array(9);
+
+    for(var i = 0; i < total_binds.length; i++)
+        total_binds[i] = [];
 
     console.log('info.init');
     totalsubString(info, total_binds);
@@ -42,8 +45,7 @@ function totalsubString(info, total_binds) {
 
             sub = require('./sub2021');
             sub.init(info[i], function (binds) {
-                //console.log(binds);
-                //total_binds[3].push(binds);
+                total_binds[3].push(binds);
             });
         } else if (codecheck == 23) {
 
