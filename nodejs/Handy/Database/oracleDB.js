@@ -15,7 +15,7 @@ oracle.init = function (total_binds, callback) {
         }
 
         let start;
-        
+
         for (var i = 0; i < total_binds.length; i++) {
             if (i == 0)
                 start = require('./sub05');
@@ -27,13 +27,13 @@ oracle.init = function (total_binds, callback) {
                 start.init(oracledb, connection, total_binds[i], function() {
                     check++;
                     console.log(check);
+                    if(check == 2)
+                        callback();
                 });
             }
         }
     });
     
-    if(check == 2)
-        callback();
 };
 
 module.exports = oracle;
