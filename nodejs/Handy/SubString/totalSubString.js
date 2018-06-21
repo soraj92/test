@@ -41,7 +41,7 @@ function totalsubString(info, total_binds) {
         } else if (codecheck == 20 || codecheck == 21) {
 
             sub = require('./sub2021');
-            sub.init(info[i], total_binds[3], function () {
+            sub.init(info[i], total_binds[3], function (binds) {
                 total_binds[3].push(binds);
             });
         } else if (codecheck == 23) {
