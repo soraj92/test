@@ -1,9 +1,9 @@
 let oracle = [];
 
-oracle.init = function (total_binds, callback) {
+oracle.init = function (total_binds, config, callback) {
     
     const oracledb = require('oracledb');
-    
+    console.log(config.oracle_info.user);
     oracledb.getConnection({
         user: "soraj92",
         password: "s79e3po5",
