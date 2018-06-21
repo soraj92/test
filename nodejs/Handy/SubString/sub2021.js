@@ -15,7 +15,7 @@ sub2021.init = function (info, callback) {
     let line = []; // line
     let serial = []; // 시리얼
     let mgr = []; //연계일보(있을수 있고 없을수 있꼬)
-    let binds_sub = [];
+    var binds_sub = [];
     let binds = [];
 
     infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds, binds_sub);
@@ -66,6 +66,7 @@ function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_tim
 
     idx.push(bsc + inv);
     binds.push(binds_sub);
+    console.log(binds_sub);
 }
 
 module.exports = sub2021;
