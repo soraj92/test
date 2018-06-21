@@ -15,6 +15,7 @@ const logistics = function (req, res) {
 
                 console.log(total_binds);
                 oracledb.init(total_binds, function () {
+                    console.log('허허거후가헉');
                     callback(null, 1);
                 });
 
