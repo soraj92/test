@@ -55,7 +55,7 @@ sub2021.init = function (oracledb, connection, binds, callback) {
     });
 }
 
-function start(connection, sql, binds, options) {
+function start(connection, sql, binds, options, callback) {
     connection.executeMany(sql, binds, options, function (err, result) {
         if (err) {
             console.log(err);
