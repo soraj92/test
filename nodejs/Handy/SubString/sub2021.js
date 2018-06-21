@@ -1,9 +1,7 @@
 let sub2021 = {};
 
 sub2021.init = function (info, callback) {
-
-    let idx; // bsc + inv
-
+    
     let binds = [];
 
     infoSubString(info, binds);
