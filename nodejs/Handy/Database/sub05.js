@@ -1,6 +1,6 @@
 let sub2021 = {};
 
-sub2021.init = function (oracledb, connection, binds) {
+sub2021.init = function (oracledb, connection, binds, callback) {
     const sql = "BEGIN CODE05TEST( :P_BSC_BRNSHP_CD, :P_INV_NO, :P_BPCK_SCT, :P_SCAN_EMP, :P_SCAN_YMD, :P_SCAN_TME,  :P_CAR_CD, :P_SERIAL_NO, :P_RET_CODE, :P_RET_MESG); END;"
 
     const options = {
@@ -50,7 +50,9 @@ sub2021.init = function (oracledb, connection, binds) {
         ]
     };
 
-    start(connection, sql, binds, options);
+    start(connection, sql, binds, options, function () {
+        callback();
+    });
 }
 
 function start(connection, sql, binds, options) {
@@ -60,6 +62,7 @@ function start(connection, sql, binds, options) {
             return;
         }
         console.dir(result);
+        callback();
     });
 }
 
