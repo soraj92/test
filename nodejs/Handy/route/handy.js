@@ -17,9 +17,6 @@ const logistics = function (req, res) {
                 // if (null_check[0] == 0) {
                 //     null_check[0] = info.length;
                 // }
-
-                for (var i = 0; i < null_check[0]; i++)
-                    console.log(idx[i]);
                 const oracledb = require('oracledb');
                 oracledb.getConnection({
                     user: "soraj92",

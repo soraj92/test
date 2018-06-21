@@ -8,7 +8,6 @@ info.init = function (body, callback) {
 
     console.log('info.init');
     totalsubString(info, total_binds);
-    console.log('info - settimeout');
     callback(total_binds);
 }
 
@@ -45,6 +44,7 @@ function totalsubString(info, total_binds) {
         sub.init(info[i], function(binds) {
            console.log(binds);
            total_binds.push(binds);
+           console.dir(total_binds);
         });
 
 
