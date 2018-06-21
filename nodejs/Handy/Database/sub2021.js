@@ -52,13 +52,9 @@ sub2021.init = function (oracledb, connection, binds) {
             },
             {
                 type: oracledb.NUMBER,
-                dir: oracledb.BIND_OUT,
-                type: oracledb.STRING,
-                maxSize: 16
+                dir: oracledb.BIND_OUT
             },
             {
-                type: oracledb.STRING,
-                maxSize: 18,
                 dir: oracledb.BIND_OUT,
                 type: oracledb.STRING,
                 maxSize: 16
