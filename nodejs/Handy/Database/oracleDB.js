@@ -3,7 +3,7 @@ let oracle = [];
 oracle.init = function (total_binds, callback) {
 
     const oracledb = require('oracledb');
-
+    let check = 0;
     oracledb.getConnection({
         user: "soraj92",
         password: "s79e3po5",
@@ -15,7 +15,7 @@ oracle.init = function (total_binds, callback) {
         }
 
         let start;
-        let check = 0;
+        
         for (var i = 0; i < total_binds.length; i++) {
             if (i == 0)
                 start = require('./sub05');
@@ -30,10 +30,10 @@ oracle.init = function (total_binds, callback) {
                 });
             }
         }
-        if(check == 2)
-            callback();
     });
-
+    
+    if(check == 2)
+        callback();
 };
 
 module.exports = oracle;
