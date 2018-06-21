@@ -32,11 +32,7 @@ oracle.init = function (total_binds, callback) {
                     if(i == 9)
                         callback();
                 });
-            } else {
-                check++;
-                if(check == 9)
-                        callback();
-            }
+            } 
         }
     });
     
