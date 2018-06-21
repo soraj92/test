@@ -78,7 +78,7 @@ oracle.init = function (total_binds, callback) {
             ]
         };
         console.log('연결 성공');
-        connection.executeMany(sql, total_binds[3], options, function (err, result) {
+        connection.executeMany(sql, total_binds[3][0], options, function (err, result) {
             if (err) {
                 console.log(err);
                 return;
