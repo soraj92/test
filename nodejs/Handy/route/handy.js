@@ -13,12 +13,14 @@ const logistics = function (req, res) {
             info.init(body, function (total_binds) {
                 const oracledb = require('../Database/oracleDB');
 
-                oracledb.init(total_binds);
+                console.log(total_binds);
+               // oracledb.init(total_binds);
                 
             });
-            console.log('end')
+            console.log('result : ' + result);
+            callback(null, result);
         });
-    }, function (err, body) {
+    }, function (err, result) {
 
         console.log('이벤트end보다 후');
     }]);

@@ -11,6 +11,7 @@ info.init = function (body, callback) {
 
     console.log('info.init');
     totalsubString(info, total_binds);
+    setTimeout(function() {console.log('ㅎㅎ')}, 10000);
     callback(total_binds);
 }
 
