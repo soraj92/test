@@ -8,7 +8,7 @@ const logistics = function (req, res) {
         req.on('data', function (chunk) {
             body.push(chunk);
         }).on('end', function () {
-            const info = require('./infoSubString');
+            const info = require('../SubString/infoSubString');
 
             info.init(body, function (info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds) {
 
