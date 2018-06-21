@@ -29,13 +29,13 @@ oracle.init = function (total_binds, callback) {
                     check++;
                     console.log(check);
 
-                    // if(i == 9)
-                    //     callback();
+                     if(check == 9)
+                         callback();
                 });
-            } 
+            } else check++;
         }
     });
-    console.log("z");
+
 };
 
 module.exports = oracle;
