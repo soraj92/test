@@ -8,9 +8,9 @@ const logistics = function (req, res) {
         req.on('data', function (chunk) {
             body.push(chunk);
         }).on('end', function () {
-            const info = require('../SubString/infoSubString');
+            const info = require('../SubString/totalSubString');
 
-            info.init(body, function (info, null_check, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds) {
+            info.init(body, function (binds) {
 
                 // console.log(null_check);
                 // if (null_check[0] == 0) {
