@@ -21,8 +21,12 @@ function totalsubString(info, total_binds) {
         }
        const codecheck = info[i].substring(0, 2).trim();
 
-        if (codecheck == 05)
+        if (codecheck == 05) {
             sub = require('./sub05');
+            sub.init(info[i], total_binds[0], function() {
+
+            });
+        }
         else if (codecheck == 10)
             sub = require('./sub10');
         else if (codecheck == 11 || codecheck == 31 || codecheck == 42)
@@ -39,13 +43,6 @@ function totalsubString(info, total_binds) {
             sub = require('./sub40');
         else if (codecheck == 41)
             sub = require('./sub41');
-
-
-        sub.init(info[i], function(binds) {
-           console.dir(total_binds);
-        });
-
-
     }
 }
 

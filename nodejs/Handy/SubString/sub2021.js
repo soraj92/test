@@ -1,6 +1,6 @@
 let sub2021 = {};
 
-sub2021.init = function (info, callback) {
+sub2021.init = function (info, binds, callback) {
 
     let idx = []; // bsc + inv
     let code = [];
@@ -15,7 +15,6 @@ sub2021.init = function (info, callback) {
     let line = []; // line
     let serial = []; // 시리얼
     let mgr = []; //연계일보(있을수 있고 없을수 있꼬)
-    let binds = [];
     var binds_sub = [];
 
     infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds, binds_sub);
@@ -66,8 +65,6 @@ function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_tim
 
     idx.push(bsc + inv);
     binds.push(binds_sub);
-    console.log(binds);
-
 }
 
 module.exports = sub2021;
