@@ -42,7 +42,7 @@ function totalsubString(info, total_binds) {
             sub = require('./sub41');
 
 
-        sub.init(info, function(binds) {
+        sub.init(info[i], function(binds) {
            console.log(binds);
         });
 
