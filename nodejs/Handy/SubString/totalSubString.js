@@ -6,7 +6,7 @@ info.init = function (body, callback) {
 
     let total_binds = new Array(9);
 
-    for(var i = 0; i < total_binds.length; i++)
+    for (var i = 0; i < total_binds.length; i++)
         total_binds[i] = [];
 
     console.log('info.init');
@@ -26,8 +26,8 @@ function totalsubString(info, total_binds) {
 
         if (codecheck == 05) {
             sub = require('./sub05');
-            sub.init(info[i], total_binds[0], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[0].push(binds);
             });
         } else if (codecheck == 10) {
 
@@ -38,8 +38,8 @@ function totalsubString(info, total_binds) {
         } else if (codecheck == 11 || codecheck == 31 || codecheck == 42) {
 
             sub = require('./sub113142');
-            sub.init(info[i], total_binds[2], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[2].push(binds);
             });
         } else if (codecheck == 20 || codecheck == 21) {
 
@@ -50,29 +50,29 @@ function totalsubString(info, total_binds) {
         } else if (codecheck == 23) {
 
             sub = require('./sub23');
-            sub.init(info[i], total_binds[4], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[4].push(binds);
             });
         } else if (codecheck == 24 || codecheck == 25) {
             sub = require('./sub2425');
-            sub.init(info[i], total_binds[5], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[5].push(binds);
             });
         } else if (codecheck == 32) {
 
             sub = require('./sub32');
-            sub.init(info[i], total_binds[6], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[6].push(binds);
             });
         } else if (codecheck == 40) {
             sub = require('./sub40');
-            sub.init(info[i], total_binds[7], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[7].push(binds);
             });
         } else if (codecheck == 41) {
             sub = require('./sub41');
-            sub.init(info[i], total_binds[8], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[8].push(binds);
             });
         }
 
