@@ -12,7 +12,7 @@ const logistics = function (req, res) {
 
             info.init(body, function (total_binds) {
 
-                console.log(total_binds);
+               // console.log(total_binds);
                 // console.log(null_check);
                 // if (null_check[0] == 0) {
                 //     null_check[0] = info.length;

@@ -42,7 +42,7 @@ function totalsubString(info, total_binds) {
 
             sub = require('./sub2021');
             sub.init(info[i], function (binds) {
-                console.log(binds);
+                //console.log(binds);
                 //total_binds[3].push(binds);
             });
         } else if (codecheck == 23) {
