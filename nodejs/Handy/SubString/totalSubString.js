@@ -29,8 +29,8 @@ function totalsubString(info, total_binds) {
         } else if (codecheck == 10) {
 
             sub = require('./sub10');
-            sub.init(info[i], total_binds[1], function () {
-
+            sub.init(info[i], function (binds) {
+                total_binds[1].push(binds);
             });
         } else if (codecheck == 11 || codecheck == 31 || codecheck == 42) {
 
@@ -42,7 +42,7 @@ function totalsubString(info, total_binds) {
 
             sub = require('./sub2021');
             sub.init(info[i], total_binds[3], function () {
-
+                total_binds[3].push(binds);
             });
         } else if (codecheck == 23) {
 
@@ -75,7 +75,7 @@ function totalsubString(info, total_binds) {
 
     }
 
-    
+
 }
 
 module.exports = info;
