@@ -9,15 +9,16 @@ const logistics = function (req, res) {
             body.push(chunk);
         }).on('end', function () {
             const info = require('../SubString/totalSubString');
-                info.init(body, function (total_binds) {
-                    const oracledb = require('../Database/oracleDB');
 
-                    console.log(total_binds);
-                    oracledb.init(total_binds, function() {
-                        callback();
-                    });
+            info.init(body, function (total_binds) {
+                const oracledb = require('../Database/oracleDB');
 
+                console.log(total_binds);
+                oracledb.init(total_binds, function () {
+                    callback(null, 1);
                 });
+
+            });
         });
     }, function (err, result) {
 
