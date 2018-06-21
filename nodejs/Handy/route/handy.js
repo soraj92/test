@@ -13,7 +13,7 @@ const logistics = function (req, res) {
             info.init(body, function (total_binds) {
                 const oracledb = require('../Database/oracleDB');
 
-                oracledb.init(total_binds, req.app.config);
+                oracledb.init(total_binds);
 
                 oracledb.getConnection({
                     user: "soraj92",

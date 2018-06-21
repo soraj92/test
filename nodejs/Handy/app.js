@@ -7,7 +7,6 @@ const router = express.Router();
 const config = require('./config');
 const route_loader = require('./route/route_loder');
 
-app.set('config',config);
 app.set('port', process.env.PORT || config.server_port);
 app.use(bodyParser.json());
 

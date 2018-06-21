@@ -1,13 +1,14 @@
 let oracle = [];
 
-oracle.init = function (total_binds, config, callback) {
+oracle.init = function (total_binds, callback) {
     
     const oracledb = require('oracledb');
-    console.log(config.oracle_info.user);
+    const config = require('../config');
+    console.log(config.oracle_info.u)
     oracledb.getConnection({
-        user: "soraj92",
-        password: "s79e3po5",
-        connectString: "soraj92.crscibn3vj7r.ap-northeast-2.rds.amazonaws.com/ORCL"
+        user: config.oracle_info.user,
+        password: config.oracle_info.password,
+        connectString: config.oracle_info.connectString
     }, function (err, connection) {
         if (err) {
             console.error(err.message);
