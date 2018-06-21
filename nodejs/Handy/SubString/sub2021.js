@@ -15,14 +15,14 @@ sub2021.init = function (info, callback) {
     let line = []; // line
     let serial = []; // 시리얼
     let mgr = []; //연계일보(있을수 있고 없을수 있꼬)
-    var binds_sub = [];
     let binds = [];
 
-    infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds, binds_sub);
+    infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds);
     callback(binds);
 }
 
-function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds, binds_sub) {
+function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds) {
+    var binds_sub = [];
 
     code.push(info.substring(0, 2).trim());
     binds_sub.push(code);
