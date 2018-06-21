@@ -25,46 +25,46 @@ sub2021.init = function (info, callback) {
 function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_time, via, line, serial, mgr, binds, binds_sub) {
 
     code.push(info.substring(0, 2).trim());
-    binds_sub.push(code[i]);
+    binds_sub.push(code);
 
     bsc.push(info.substring(2, 7));
-    binds_sub.push(bsc[i]);
+    binds_sub.push(bsc);
 
     ptn.push(info.substring(7, 12));
-    binds_sub.push(ptn[i]);
+    binds_sub.push(ptn);
 
     inv.push(info.substring(12, 24).trim());
-    binds_sub.push(inv[i]);
+    binds_sub.push(inv);
 
     scan_m.push(info.substring(24, 32));
-    binds_sub.push(scan_m[i]);
+    binds_sub.push(scan_m);
 
     car.push(info.substring(32, 37));
-    binds_sub.push(car[i]);
+    binds_sub.push(car);
 
     s_day.push(info.substring(37, 45));
-    binds_sub.push(s_day[i]);
+    binds_sub.push(s_day);
 
     s_time.push(info.substring(45, 51));
-    binds_sub.push(s_time[i]);
+    binds_sub.push(s_time);
 
     via.push(info.substring(51, 53).trim());
-    binds_sub.push(via[i]);
+    binds_sub.push(via);
 
     line.push(info.substring(53, 55));
-    binds_sub.push(line[i]);
+    binds_sub.push(line);
 
     serial.push(info.substring(55, 59));
-    binds_sub.push(serial[i]);
+    binds_sub.push(serial);
 
     if (info.length == 71) {
         mgr.push(info.substring(59, 71));
     } else {
         mgr.push("");
     }
-    binds_sub.push(mgr[i]);
+    binds_sub.push(mgr);
 
-    idx.push(bsc[i] + inv[i]);
+    idx.push(bsc + inv);
     binds.push(binds_sub);
 
 }
