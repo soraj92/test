@@ -1,6 +1,6 @@
 let sub2021 = {};
 
-sub2021.init = function (connection, binds) {
+sub2021.init = function (oracledb, connection, binds) {
     const sql = "BEGIN CODE20TEST(:P_JOB_SCT, :P_BSC_BRNSHP_CD, :P_PTN_BRNSHP_CD, :P_INV_NO, :P_SCAN_EMP, :P_CAR_CD, :P_SCAN_YMD, :P_SCAN_TME, :P_VIA_YN, :P_SERIAL_NO, :P_MGR_NO, :P_RET_CODE, :P_RET_MESG); END;"
 
     const options = {
