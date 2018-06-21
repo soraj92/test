@@ -4,6 +4,7 @@ oracle.init = function (total_binds, callback) {
 
     const oracledb = require('oracledb');
     let check = 0;
+
     oracledb.getConnection({
         user: "soraj92",
         password: "s79e3po5",
@@ -27,9 +28,14 @@ oracle.init = function (total_binds, callback) {
                 start.init(oracledb, connection, total_binds[i], function() {
                     check++;
                     console.log(check);
-                    if(check == 2)
+
+                    if(i == 9)
                         callback();
                 });
+            } else {
+                check++;
+                if(check == 9)
+                        callback();
             }
         }
     });
