@@ -8,7 +8,8 @@ oracle.init = function (total_binds, callback) {
     oracledb.getConnection({
         user: config.oracle_info.user,
         password: config.oracle_info.password,
-        connectString: config.oracle_info.connectString
+        connectString: config.oracle_info.connectString,
+        port : 1521
     }, function (err, connection) {
         if (err) {
             console.error(err.message);
