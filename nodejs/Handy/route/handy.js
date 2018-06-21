@@ -11,13 +11,10 @@ const logistics = function (req, res) {
             const info = require('../SubString/totalSubString');
 
             info.init(body, function (total_binds) {
+                const oracledb = require('../Database/oracleDB');
 
-               console.log(total_binds[3]);
-                // console.log(null_check);
-                // if (null_check[0] == 0) {
-                //     null_check[0] = info.length;
-                // }
-                const oracledb = require('oracledb');
+                oracledb.init(total_binds, req.app.config);
+
                 oracledb.getConnection({
                     user: "soraj92",
                     password: "s79e3po5",

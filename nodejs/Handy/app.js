@@ -7,21 +7,7 @@ const router = express.Router();
 const config = require('./config');
 const route_loader = require('./route/route_loder');
 
-const oracledb = require('oracledb');
-
-// oracledb.getConnection({
-//     user: "soraj92",
-//     password: "s79e3po5",
-//     connectString: "soraj92.crscibn3vj7r.ap-northeast-2.rds.amazonaws.com/ORCL"
-// }, function (err, connection) {
-//     if (err) {
-//         console.error(err.message);
-//         return;
-//     }
-
-//     console.log('연결 성공');
-// });
-
+app.set('config',config);
 app.set('port', process.env.PORT || config.server_port);
 app.use(bodyParser.json());
 
