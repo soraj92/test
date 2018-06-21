@@ -20,25 +20,25 @@ function totalsubString(info, total_binds) {
         if (!info[i]) {
             continue;
         }
-        code.push(info[i].substring(0, 2).trim());
+       const codecheck = info[i].substring(0, 2).trim();
 
-        if (code[i] == 05)
+        if (codecheck == 05)
             sub = require('./sub05');
-        else if (code[i] == 10)
+        else if (codecheck == 10)
             sub = require('./sub10');
-        else if (code[i] == 11 || code[i] == 31 || code[i] == 42)
+        else if (codecheck == 11 || codecheck == 31 || codecheck == 42)
             sub = require('./sub113142');
-        else if (code[i] == 20 || code[i] == 21)
+        else if (codecheck == 20 || codecheck == 21)
             sub = require('./sub2021');
-        else if (code[i] == 23)
+        else if (codecheck == 23)
             sub = require('./sub23');
-        else if (code[i] == 24 || code[i] == 25)
+        else if (codecheck == 24 || codecheck == 25)
             sub = require('./sub2425');
-        else if (code[i] == 32)
+        else if (codecheck == 32)
             sub = require('./sub32');
-        else if (code[i] == 40)
+        else if (codecheck == 40)
             sub = require('./sub40');
-        else if (code[i] == 41)
+        else if (codecheck == 41)
             sub = require('./sub41');
 
 
