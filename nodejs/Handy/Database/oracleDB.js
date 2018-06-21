@@ -6,10 +6,9 @@ oracle.init = function (total_binds, callback) {
     const config = require('../config');
 
     oracledb.getConnection({
-        user: config.oracle_info.user,
-        password: config.oracle_info.password,
-        connectString: config.oracle_info.connectString,
-        port : 1521
+        user: "soraj92",
+        password: "s79e3po5",
+        connectString: "soraj92.crscibn3vj7r.ap-northeast-2.rds.amazonaws.com/ORCL"
     }, function (err, connection) {
         if (err) {
             console.error(err.message);
