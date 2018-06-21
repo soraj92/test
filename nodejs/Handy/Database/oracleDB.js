@@ -15,6 +15,7 @@ oracle.init = function (total_binds, callback) {
         }
         let start = require('./sub2021');
         start.init(oracledb, connection, total_binds[3][0]);
+        console.log(total_binds[3][0]);
     });
 
 };
