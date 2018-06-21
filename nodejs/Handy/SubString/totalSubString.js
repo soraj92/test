@@ -42,8 +42,6 @@ function totalsubString(info, total_binds) {
 
 
         sub.init(info[i], function(binds) {
-           console.log(binds);
-           total_binds.push(binds);
            console.dir(total_binds);
         });
 

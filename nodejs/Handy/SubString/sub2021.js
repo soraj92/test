@@ -66,6 +66,7 @@ function infoSubString(info, idx, code, bsc, ptn, inv, scan_m, car, s_day, s_tim
 
     idx.push(bsc + inv);
     binds.push(binds_sub);
+    console.log(binds);
 
 }
 
