@@ -17,8 +17,8 @@ const logistics = function (req, res) {
                // oracledb.init(total_binds);
                 
             });
-            console.log('result : ' + result);
-            callback(null, result);
+            // console.log('result : ' + result);
+            // callback(null, result);
         });
     }, function (err, result) {
 
