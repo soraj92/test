@@ -1,7 +1,6 @@
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
-const static = require('serve-static');
 const app = express();
 const router = express.Router();
 const config = require('./config');

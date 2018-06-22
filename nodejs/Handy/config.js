@@ -6,6 +6,11 @@ const config = {
         path: '/logistics/hlc',
         type: 'post',
         method: 'logistics'
+    }, {
+        file: './time',
+        path: '/logistics/Time',
+        type: 'get',
+        method: 'time'
     }],
     oracle_info: [{
         user: "soraj92",
