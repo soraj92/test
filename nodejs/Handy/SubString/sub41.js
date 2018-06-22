@@ -38,7 +38,7 @@ function infoSubString(info, binds) {
     const pay = info.substring(47, 49); // 착불
     binds_sub.push(pay);
 
-    const fare = parseint(info.substring(49, 56)); // 운임
+    const fare = parseInt(info.substring(49, 56)); // 운임
     binds_sub.push(fare);
 
     const line = info.substring(56, 58); // line
