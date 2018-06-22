@@ -1,7 +1,7 @@
 let sub2021 = {};
 
 sub2021.init = function (oracledb, connection, binds, callback) {
-    const sql = "BEGIN CODE40TEST( :P_SCAN_BRNSHP_CD, :P_INV_NO, :P_DLV_SCT, :P_SCAN_EMP, :P_SCAN_YMD, :P_SCAN_TME,  :P_CAR_CD, :P_SERIAL_NO, :P_RET_CODE, :P_RET_MESG); END;"
+    const sql = "BEGIN SP_RF_HLC_BDLV_MAIN( :P_SCAN_BRNSHP_CD, :P_INV_NO, :P_DLV_SCT, :P_SCAN_EMP, :P_SCAN_YMD, :P_SCAN_TME,  :P_CAR_CD, :P_SERIAL_NO, :P_RET_CODE, :P_RET_MESG); END;"
 
     const options = {
         autoCommit: true, // autocommit if there are no batch errors
