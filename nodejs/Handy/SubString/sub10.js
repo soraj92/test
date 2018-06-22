@@ -29,10 +29,10 @@ function infoSubString(info, binds) {
 
     const scan_m = info.substring(37, 45); // 스캔 사원
     binds_sub.push(scan_m);
-    
+
     const s_day = info.substring(45, 53); // 스캔 일자
     binds_sub.push(s_day);
-    
+
     const s_time = info.substring(53, 59); // 스캔 시간
     binds_sub.push(s_time);
 
@@ -42,14 +42,14 @@ function infoSubString(info, binds) {
     const pay = info.substring(64, 66).trim(); // 현불
     binds_sub.push(pay);
 
-    const fare =parseInt(info.substring(66, 73).trim()); // 운임
+    const fare = parseInt(info.substring(66, 73).trim()); // 운임
     binds_sub.push(fare);
 
     const line = info.substring(73, 75); //line
     const serial = info.substring(75, 79); // serial
     binds_sub.push(line + serial); //단말기
 
-    
+
     const idx = bsc + inv;
     binds.push(binds_sub);
 }
