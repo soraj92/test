@@ -65,7 +65,6 @@ function start(connection, sql, binds, options, callback) {
             console.log(err);
             return;
         }
-        console.dir(result);
         callback();
     });
 }
