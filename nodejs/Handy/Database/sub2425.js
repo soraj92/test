@@ -1,6 +1,6 @@
-let sub2021 = {};
+let sub2425 = {};
 
-sub2021.init = function (oracledb, connection, binds, callback) {
+sub2425.init = function (oracledb, connection, binds, callback) {
     const sql = "BEGIN SP_RF_HLC_RLTD_MAIN( :P_SCAN_BRNSHP_CD , :P_PTN_BRNSHP_CD , :P_JOB_SCT, :P_ROLT_NO, :P_INV_NO, :P_SCAN_EMP, :P_SCAN_YMD, :P_SCAN_TME,  :P_CAR_CD, :P_SERIAL_NO, :P_RET_CODE, :P_RET_MESG); END;"
 
     const options = {
@@ -74,4 +74,4 @@ function start(connection, sql, binds, options, callback) {
     });
 }
 
-module.exports = sub2021;
+module.exports = sub2425;
