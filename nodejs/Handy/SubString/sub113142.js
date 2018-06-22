@@ -16,14 +16,14 @@ function infoSubString(info, binds) {
     const bsc = info.substring(2, 7); // 집하 스캔
     binds_sub.push(bsc);
     
-    const rolt = info.substring(7, 19).trim(); // 운송장
-    binds_sub.push(rolt);
+    const inv = info.substring(7, 19).trim(); // 운송장
+    binds_sub.push(inv);
     
-    const code = info.substring(0, 2).trim(); // 작업 구분, 지연 사유 종류
-    binds_sub.push(inv);
+    const code_dly = info.substring(0, 2).trim(); // 작업 구분, 지연 사유 종류
+    binds_sub.push(code_dly);
 
-    const code = info.substring(19, 21).trim(); // 지연 코드 값
-    binds_sub.push(inv);
+    const dly_rea = info.substring(19, 21).trim(); // 지연 코드 값
+    binds_sub.push(dly_rea);
 
     const scan_m = info.substring(21, 29); // 스캔 사원
     binds_sub.push(scan_m);
