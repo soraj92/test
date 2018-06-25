@@ -9,7 +9,6 @@ info.init = function (body, callback) {
     for (var i = 0; i < total_binds.length; i++)
         total_binds[i] = [];
 
-    console.log('info.init');
     totalsubString(info, total_binds, function() {        
         callback(total_binds);
     });
@@ -17,6 +16,8 @@ info.init = function (body, callback) {
 
 function totalsubString(info, total_binds, callback) {
     
+    let collection;
+
     for (var i = 0; i < info.length; i++) {
         let sub;
 
@@ -24,6 +25,7 @@ function totalsubString(info, total_binds, callback) {
             continue;
         }
         const codecheck = info[i].substring(0, 2).trim();
+        collection = info[i].substring(2,7).trim();
 
         if (codecheck == 05) {
             sub = require('./sub05');
@@ -78,6 +80,12 @@ function totalsubString(info, total_binds, callback) {
         }
 
     }
+    const log = require('../common/total-logger');
+    const logger = new log(collection);
+    logger.info(info);
+    const log2 = require('../common/total-logger');
+    const logger2 = new log2(collection);
+    logger2.info(info);
 
     callback();
 }
