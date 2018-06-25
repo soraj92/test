@@ -83,7 +83,7 @@ function totalsubString(info, total_binds, callback) {
     const log = require('../common/total-logger');
     const logger = new log(collection);
    logger.logger.info(info);
-    const log2 = require('../common/total-logger');
+    const log2 = require('../common/part-logger');
     const logger2 = new log2(collection);
     logger2.logger.info(info);
 
