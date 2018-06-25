@@ -1,19 +1,21 @@
 let info = {};
 
 info.init = function (body, callback) {
+    body = Buffer.concat(body).toString();
+    const info = body.split('\n');
+
     let total_binds = new Array(9);
 
     for (var i = 0; i < total_binds.length; i++)
         total_binds[i] = [];
 
-    totalsubString(body, total_binds, function() {        
+    totalsubString(info, total_binds, function() {        
         callback(total_binds);
     });
 }
 
-function totalsubString(body, total_binds, callback) {
-    body = Buffer.concat(body).toString();
-    const info = body.split('\n');
+function totalsubString(info, total_binds, callback) {
+    
     let collection;
 
     for (var i = 0; i < info.length; i++) {
@@ -80,10 +82,10 @@ function totalsubString(body, total_binds, callback) {
     }
     const log = require('../common/total-logger');
     const logger = new log(collection);
-    logger.logger.info(body);
+    logger.logger.info(info);
     const log2 = require('../common/part-logger');
     const logger2 = new log2(collection);
-    logger2.logger.info(body);
+    logger2.logger.info(info);
 
     callback();
 }
