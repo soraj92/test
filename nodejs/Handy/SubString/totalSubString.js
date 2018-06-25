@@ -1,21 +1,19 @@
 let info = {};
 
 info.init = function (body, callback) {
-    body = Buffer.concat(body).toString();
-    const info = body.split('\n');
-
     let total_binds = new Array(9);
 
     for (var i = 0; i < total_binds.length; i++)
         total_binds[i] = [];
 
-    totalsubString(info, total_binds, function() {        
+    totalsubString(body, total_binds, function() {        
         callback(total_binds);
     });
 }
 
-function totalsubString(info, total_binds, callback) {
-    
+function totalsubString(body, total_binds, callback) {
+    body = Buffer.concat(body).toString();
+    const info = body.split('\n');
     let collection;
 
     for (var i = 0; i < info.length; i++) {
