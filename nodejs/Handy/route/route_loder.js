@@ -15,13 +15,14 @@ function initRoutes(app, router) {
     for (var i = 0; i < infoLen; i++) {
         const curItem = config.route_info[i];
         const curModule = require(curItem.file);
+        const module_name = curItem.method;
 
         if (curItem.type == 'post') {
-            router.route(curItem.path).post(curModule.logistics);
+            router.route(curItem.path).post(curModule.module_name);
         } else if (curItem.type == 'get') {
-            router.route(curItem.path).get(curModule.time);
+            router.route(curItem.path).get(curModule.module_name);
         } else
-            console.log('post가 아님');
+            console.log('post나 get이 아님');
     }
     app.use('/', router);
 }
