@@ -41,7 +41,6 @@ oracle.init = function (total_binds, callback) {
 
                 start.init(oracledb, connection, total_binds[i], function () {
                     check++;
-                    console.log(check);
 
                     if (check == 9)
                         callback();

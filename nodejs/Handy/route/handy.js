@@ -12,8 +12,6 @@ const logistics = function (req, res) {
 
             info.init(body, function (total_binds) {
                 const oracledb = require('../Database/oracleDB');
-
-                console.log(total_binds);
                 oracledb.init(total_binds, function () {
                     console.log('허허거후가헉');
                     callback(null, 1);
