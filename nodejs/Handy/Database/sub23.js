@@ -47,13 +47,10 @@ sub23.init = function (oracledb, connection, binds, callback) {
     };
 
     start(connection, sql, binds, options, function (result) {
-        
-        for(let i = 0; i < binds[0].length; i++)
-        {
-            console.log(binds[0][i] + " / " + binds[0][i] + " / " +  result[i]);
-            console.dir(result[i]);
-        }
-        
+
+        console.log(binds[0][1]);
+        console.log(binds[1][1]);
+        console.log(binds[2][1]);
         callback();
     });
 }
