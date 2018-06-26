@@ -47,16 +47,15 @@ sub23.init = function (oracledb, connection, binds, callback) {
     };
 
     start(connection, sql, binds, options, function (result) {
+        const log = require('../common/pbox-logger');
+        const logger = new log();
 
-        console.log(binds[0][1]);
-        console.log(binds[1][1]);
-        console.log(binds[2][1]);
-        console.dir(result.outBinds[0][0]);
+        for(let i = 0; i < binds.length; i++) {
+            logger.logger.info("운반 : " + binds[i][1] + " / 송장 : " + binds[i][2] + " / 결과 : " + result.outBinds[i][0] + " / 메시지 : " + result.outBinds[i][1]);
 
-        for(let i = 0; i < binds.length; i++)
-            console.log(binds[i][1] + " / " + binds[i][2] + " / " + result.outBinds[i][0] + " / " + result.outBinds[i][1]);
-
-        callback();
+            if(i == binds.length)
+                callback();
+        }
     });
 }
 
