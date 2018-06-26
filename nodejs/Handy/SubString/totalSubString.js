@@ -20,6 +20,14 @@ function totalsubString(info, total_binds, callback) {
     const log = require('../common/total-logger');
     const log2 = require('../common/part-logger');
     
+    collection = info[0].substring(2,7).trim();
+    const total = new log(collection);
+    const part = new log2(collection);
+    for (var j = 0; j < info.length; j++) {
+        total.logger.info(info[j]);
+        part.logger.info(info[j]);
+    }
+
     for (var i = 0; i < info.length; i++) {
         let sub;
         
@@ -27,9 +35,6 @@ function totalsubString(info, total_binds, callback) {
             continue;
         }
         const codecheck = info[i].substring(0, 2).trim();
-        collection = info[i].substring(2,7).trim();
-        const total = new log(collection);
-        const part = new log2(collection);
 
         if (codecheck == 05) {
             sub = require('./sub05');
@@ -82,9 +87,6 @@ function totalsubString(info, total_binds, callback) {
                 total_binds[8].push(binds.pop());
             });
         }
-        total.logger.info(info[i]);
-        part.logger.info(info[i]);
-
     }
 
     callback();
