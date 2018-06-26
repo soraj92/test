@@ -17,6 +17,10 @@ info.init = function (body, callback) {
 function totalsubString(info, total_binds, callback) {
     
     let collection;
+    const log = require('../common/total-logger');
+    const total = new log(collection);
+    const log2 = require('../common/part-logger');
+    const part = new log2(collection);
 
     for (var i = 0; i < info.length; i++) {
         let sub;
@@ -78,14 +82,10 @@ function totalsubString(info, total_binds, callback) {
                 total_binds[8].push(binds.pop());
             });
         }
+        total.logger.info(info[i]);
+        part.logger.info(info[i]);
 
     }
-    const log = require('../common/total-logger');
-    const logger = new log(collection);
-    logger.logger.info(info);
-    const log2 = require('../common/part-logger');
-    const logger2 = new log2(collection);
-    logger2.logger.info(info);
 
     callback();
 }
