@@ -53,7 +53,7 @@ sub23.init = function (oracledb, connection, binds, callback) {
         for(let i = 0; i < binds.length; i++) {
             logger.logger.info("운반 : " + binds[i][1] + " / 송장 : " + binds[i][2] + " / 결과 : " + result.outBinds[i][0] + " / 메시지 : " + result.outBinds[i][1]);
 
-            if(i == binds.length)
+            if(i == binds.length-1)
                 callback();
         }
     });
