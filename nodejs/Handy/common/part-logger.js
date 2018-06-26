@@ -19,7 +19,9 @@ function Logger(collection) {
                 maxsize:"500m",
                 maxFiles:100,
                 timestamp: function(){return new Date().toFormat('YYYY-MM-DD HH24:MI:SS')},
-                json:false
+                format: winston.format.combine(
+					winston.format.printf(info=> info.message)
+				)
             })
         ]
     });
