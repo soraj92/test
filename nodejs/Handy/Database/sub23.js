@@ -46,7 +46,9 @@ sub23.init = function (oracledb, connection, binds, callback) {
         ]
     };
 
-    start(connection, sql, binds, options, function () {
+    start(connection, sql, binds, options, function (result) {
+        console.log(binds);
+        console.log(binds[0]);
         callback();
     });
 }
@@ -58,7 +60,7 @@ function start(connection, sql, binds, options, callback) {
             return;
         }
         console.dir(result);
-        callback();
+        callback(result);
     });
 }
 
