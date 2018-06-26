@@ -18,18 +18,18 @@ function totalsubString(info, total_binds, callback) {
     
     let collection;
     const log = require('../common/total-logger');
-    const total = new log(collection);
     const log2 = require('../common/part-logger');
-    const part = new log2(collection);
-
+    
     for (var i = 0; i < info.length; i++) {
         let sub;
-
+        
         if (!info[i]) {
             continue;
         }
         const codecheck = info[i].substring(0, 2).trim();
         collection = info[i].substring(2,7).trim();
+        const total = new log(collection);
+        const part = new log2(collection);
 
         if (codecheck == 05) {
             sub = require('./sub05');
