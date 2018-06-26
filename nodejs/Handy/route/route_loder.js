@@ -18,9 +18,9 @@ function initRoutes(app, router) {
         const module_name = curItem.method;
         console.log(module_name)
         if (curItem.type == 'post') {
-            router.route(curItem.path).post(curModule.module_name);
+            router.route(curItem.path).post(curModule[module_name]);
         } else if (curItem.type == 'get') {
-            router.route(curItem.path).get(curModule.module_name);
+            router.route(curItem.path).get(curModule[module_name]);
         } else
             console.log('post나 get이 아님');
     }
