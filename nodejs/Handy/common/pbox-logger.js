@@ -4,8 +4,8 @@ const path = require('path');
 require('date-utils');
 
 function Logger() {
-    this.infodir = path.join('/home/ec2-user/PboxLog','%DATE%.log');
-    this.errdir = path.join('/home/ec2-user/PboxLog','error','%DATE%.log');
+    this.infodir = path.join('/home/ec2-user/Log/PboxLog','%DATE%.log');
+    //this.errdir = path.join('/home/ec2-user/PboxLog','error','%DATE%.log');
     this.logger = winston.createLogger({
         transports : [
             new (rotate)({

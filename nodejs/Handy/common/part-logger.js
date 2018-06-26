@@ -6,8 +6,8 @@ require('date-utils');
 function Logger(collection) {
     const newDate = new Date();
     const server_time = newDate.toFormat('YYYYMMDD');
-    this.infodir = path.join('/home/ec2-user/HandyLog','part',server_time,collection,'%DATE%.log');
-    this.errdir = path.join('/home/ec2-user/HandyLog','error','%DATE%.log');
+    this.infodir = path.join('/home/ec2-user/Log/HandyLog','part',server_time,collection,'%DATE%.log');
+    //this.errdir = path.join('/home/ec2-user/HandyLog','error','%DATE%.log');
     this.logger = winston.createLogger({
         transports : [
             new (rotate)({

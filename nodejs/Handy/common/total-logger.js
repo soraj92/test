@@ -3,8 +3,8 @@ const rotate = require('winston-daily-rotate-file');
 const path = require('path');
 
 function Logger(collection) {
-    this.infodir = path.join('/home/ec2-user/HandyLog','total',collection,'%DATE%.log');
-    this.errdir = path.join('/home/ec2-user/HandyLog','error','%DATE%.log');
+    this.infodir = path.join('/home/ec2-user/Log/HandyLog','total',collection,'%DATE%.log');
+    //this.errdir = path.join('/home/ec2-user/HandyLog','error','%DATE%.log');
     this.logger = winston.createLogger({
         transports : [
             new (rotate)({
