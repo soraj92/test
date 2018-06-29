@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 router.route('/test').post(function (req, res) {
         console.log("test접속");
-        let body;
+        let body = [];
         req.on('data', function (chunk) {
                  body.push(chunk);
          }).on('end', function () {
