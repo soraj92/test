@@ -1,0 +1,49 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 31
+    },
+    "auditLog": "/home/ec2-user/test/nodejs/Handy/log/error/.audit.json",
+    "files": [
+        {
+            "date": 1529907861839,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/total/88888/20180625.log",
+            "hash": "0032119c4abce82dba2c63d8c879a0fe"
+        },
+        {
+            "date": 1529907861839,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/error/2018-06-25.log",
+            "hash": "6d33ecd3e5e5857c0125406b96200927"
+        },
+        {
+            "date": 1529907861840,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/part/20180625/88888/152421.log",
+            "hash": "cafd50df0999d34dfa4e0c175f4cd168"
+        },
+        {
+            "date": 1529907861840,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/error/2018-06-25.log",
+            "hash": "f8fef52e9891dedde80705439f5681d5"
+        },
+        {
+            "date": 1529907867459,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/total/88888/20180625.log",
+            "hash": "0f84768b2b6449e728ca02de46261644"
+        },
+        {
+            "date": 1529907867459,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/error/2018-06-25.log",
+            "hash": "f63b9af55be22365e25026adb8d8063e"
+        },
+        {
+            "date": 1529907867460,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/part/20180625/88888/152427.log",
+            "hash": "df635c78e0c8b3ee2c58084df783be95"
+        },
+        {
+            "date": 1529907867461,
+            "name": "/home/ec2-user/test/nodejs/Handy/log/error/2018-06-25.log",
+            "hash": "c1e4f26a09b28732a852e34bcdc2aaff"
+        }
+    ]
+}

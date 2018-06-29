@@ -14,6 +14,16 @@
             "date": 1527228790292,
             "name": "/home/ec2-user/test/nodejs/Serial/log/errorLog/error_2018-05-25.log",
             "hash": "59c30384ad954434e145c9f251fca607"
+        },
+        {
+            "date": 1529987453238,
+            "name": "/home/ec2-user/test/nodejs/Serial/log/infoLog/info_2018-06-26.log",
+            "hash": "0c170ee7667d45c558e2c6d25cc3f402"
+        },
+        {
+            "date": 1529987453239,
+            "name": "/home/ec2-user/test/nodejs/Serial/log/errorLog/error_2018-06-26.log",
+            "hash": "45ba927587f21d31544baafe2d46a9a9"
         }
     ]
 }
