@@ -18,8 +18,7 @@ router.route('/test').post(function (req, res) {
                  body = Buffer.concat(body).toString();
 
                  setTimeout(function() {
-         
-         
+                     
                      console.log("body : " + body);
          
                  }, 6000);
