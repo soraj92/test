@@ -26,6 +26,7 @@ router.route('/test').post(function (req, res) {
          });
 });
 
+app.use('/',router);
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log('서버 실행 : ');
