@@ -17,12 +17,12 @@ router.route('/test').post(function (req, res) {
          }).on('end', function () {
                  body = Buffer.concat(body).toString();
 
-                 setTimeout(6000, function() {
+                 setTimeout(function() {
          
          
                      console.log("body : " + body);
          
-                 });
+                 }, 6000);
          });
 });
 
